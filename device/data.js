@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    const url = 'http://11533238.ngrok.io/records';
+    const url = 'http://localhost:3000/records';
     const $_question = $('.question');
     const medication = $_question.data('medication');
     const user = $_question.data('user');

@@ -9,7 +9,7 @@ const dashboardStyle = {
   successText: {
     color: successColor[0]
   },
-  upArrowCardCategory: {
+  upArrowcardTitle: {
     width: "16px",
     height: "16px"
   },
@@ -34,28 +34,12 @@ const dashboardStyle = {
       marginLeft: "3px"
     }
   },
-  cardCategory: {
-    color: grayColor[0],
-    margin: "0",
-    fontSize: "14px",
-    marginTop: "0",
-    paddingTop: "10px",
-    marginBottom: "0"
-  },
-  cardCategoryWhite: {
-    color: "rgba(" + hexToRgb(whiteColor) + ",.62)",
-    margin: "0",
-    fontSize: "14px",
-    marginTop: "0",
-    marginBottom: "0"
-  },
   cardTitle: {
     color: grayColor[2],
-    marginTop: "0px",
+    paddingTop: "10px",
     minHeight: "auto",
     fontWeight: "300",
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: "3px",
     textDecoration: "none",
     "& small": {
       color: grayColor[1],
@@ -64,12 +48,44 @@ const dashboardStyle = {
     }
   },
   cardTitleWhite: {
-    color: whiteColor,
-    marginTop: "0px",
+    color: "rgba(" + hexToRgb(whiteColor) + ",.62)",
+    minHeight: "auto",
+    fontWeight: "400",
+    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+    textDecoration: "none",
+    "& small": {
+      color: grayColor[1],
+      fontWeight: "400",
+      lineHeight: "1"
+    }
+  },
+  cardNote: {
+    color: grayColor[0],
+    margin: "0",
+    fontSize: "14px",
+    marginTop: "0",
+    paddingTop: "0",
+    marginBottom: "0"
+  },
+  cardContent: {
+    color: grayColor[2],
+    paddingTop: "10px",
     minHeight: "auto",
     fontWeight: "300",
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: "3px",
+    textDecoration: "none",
+    "& small": {
+      color: grayColor[1],
+      fontWeight: "400",
+      lineHeight: "1"
+    }
+  },
+  cardContentWhite: {
+    color: whiteColor,
+    paddingTop: "10px",
+    minHeight: "auto",
+    fontWeight: "300",
+    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
     textDecoration: "none",
     "& small": {
       color: grayColor[1],

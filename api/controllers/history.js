@@ -3,7 +3,7 @@ const Record = require('../models/records');
 
 const History = module.exports;
 
-async function follow(questions, yesId, noId, answer) {
+async function follow(questions, yesId, noId, date, answer) {
   if (answer === 'Sim' && yesId !== undefined) {
     const medications = await Medication
       .find({ n_id: yesId })
@@ -39,6 +39,7 @@ async function follow(questions, yesId, noId, answer) {
     const records = await Record
       .find({ medication: medications[0].n_id })
       .sort({ date: 'desc' })
+      .where('date').gte(date)
       .limit(1)
       .exec();
 
@@ -85,5 +86,8 @@ History.last = async () => {
     question: medications[0].text
   });
 
-  return await follow(questions, medications[0].followup_yes, medications[0].followup_no, records[0].answer);
+  return await follow(
+    questions, medications[0].followup_yes, medications[0].followup_no,
+    medications[0].date, records[0].answer
+  );
 };
