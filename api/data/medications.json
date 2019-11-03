@@ -1,0 +1,30 @@
+[
+  {
+    "followup_yes": 2,
+    "n_id": 1,
+    "name": "Pressão Arterial",
+    "reminderDate": "1900-01-01T09:00:00Z",
+    "text": "Já mediu a pressão arterial hoje?",
+    "user": 1
+  },
+  {
+    "followup_no": 3,
+    "n_id": 2,
+    "name": "Valor pressão arterial recomendado",
+    "text": "Os valores estavam entre 120-130 e 60-70?",
+    "user": 1
+  },
+  {
+    "followup_no": 4,
+    "n_id": 3,
+    "name": "Valor pressão arterial perigosa",
+    "text": "Os valores estavam abaixo dos 150 ou 90?",
+    "user": 1
+  },
+  {
+    "n_id": 4,
+    "name": "Warning",
+    "text": "Tomou café ou fumou nos últimos 30 minutos?",
+    "user": 1
+  }
+]
