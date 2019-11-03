@@ -28,7 +28,7 @@ async function follow(questions, yesId, noId, date, answer) {
       question: medications[0].text
     });
 
-    questions = await follow(questions, medications[0].followup_yes, medications[0].followup_no, records[0].answer);
+    questions = await follow(questions, medications[0].followup_yes, medications[0].followup_no, date, records[0].answer);
   } else if (answer === 'Não' && noId !== undefined) {
     const medications = await Medication
       .find({ n_id: noId })
@@ -39,7 +39,6 @@ async function follow(questions, yesId, noId, date, answer) {
     const records = await Record
       .find({ medication: medications[0].n_id })
       .sort({ date: 'desc' })
-      .where('date').gte(date)
       .limit(1)
       .exec();
 
@@ -54,7 +53,7 @@ async function follow(questions, yesId, noId, date, answer) {
       question: medications[0].text
     });
 
-    questions = await follow(questions, medications[0].followup_yes, medications[0].followup_no, records[0].answer);
+    questions = await follow(questions, medications[0].followup_yes, medications[0].followup_no, date, records[0].answer);
   }
 
   return questions;
