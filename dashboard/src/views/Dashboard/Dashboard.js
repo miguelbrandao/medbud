@@ -30,6 +30,8 @@ import Running from "assets/img/running.png"
 import Heart from "assets/img/heart.png"
 import Drop from "assets/img/drop.png"
 import Avatar from "@material-ui/core/Avatar"
+import Icon from "@material-ui/core/Icon"
+import {Link} from "react-router-dom"
 
 const useStyles = makeStyles(styles);
 
@@ -158,7 +160,7 @@ export default function Dashboard() {
         </GridItem>
       </GridContainer>
       <GridContainer>
-        <GridItem xs={12} sm={12} md={6}>
+        <GridItem xs={12} sm={12} md={5}>
           <Card chart>
             <CardHeader color="info">
               <ChartistGraph
@@ -180,7 +182,7 @@ export default function Dashboard() {
           </Card>
         </GridItem>
 
-        <GridItem xs={12} sm={12} md={6}>
+        <GridItem xs={12} sm={12} md={5}>
           <Card chart>
             <CardHeader color="success">
               <ChartistGraph
@@ -205,6 +207,21 @@ export default function Dashboard() {
                 <AccessTime /> atualizado há 2 dias
               </div>
             </CardFooter>
+          </Card>
+        </GridItem>
+
+        <GridItem xs={12} sm={6} md={2}>
+          <Card>
+            <CardHeader color="info" stats icon>
+              <Link to="/add">
+                <CardIcon color="info">
+                  <Icon color="#fff">add_circle</Icon>
+                </CardIcon>
+              </Link>
+            </CardHeader>
+            <CardBody>
+              <h3 className={classes.cardTitle}>Adicionar lembrete</h3>
+            </CardBody>
           </Card>
         </GridItem>
       </GridContainer>

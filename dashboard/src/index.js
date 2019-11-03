@@ -25,12 +25,14 @@ import fetch from 'isomorphic-unfetch';
 import Admin from "layouts/Admin.js";
 
 import "assets/css/material-dashboard-react.css?v=1.8.0";
+import SignIn from "./components/SignIn/SignIn";
+import Add from "./components/Add/Add"
 
 const hist = createBrowserHistory();
 
 localStorage.clear();
 localStorage.userID = 1;
-const data = (endpoint) => fetch("http://localhost:3000" + endpoint)
+const data = (endpoint) => fetch("http://deca8556.ngrok.io" + endpoint)
                             .then( r => r.json() )
                             .catch(e => console.log(e));
 data("/medications/users/" + localStorage.userID).then(r => localStorage.medications = JSON.stringify(r));
@@ -44,13 +46,20 @@ data("/users/" + localStorage.userID).then(r => {
   localStorage.sns_id  = r[0].sns_id;
 });
 data("/records/users/" + localStorage.userID).then(r => localStorage.records = JSON.stringify(r));
-data("/history").then(r => localStorage.history = JSON.stringify(r));
-
+localStorage.history = [
+{
+    "answer": "Sim",
+    "date_a": "2019-11-03T15:38:01.000Z",
+    "date_q": "1900-01-01T09:00:00.000Z",
+    "question": "Já mediu a pressão arterial hoje?"
+}
+];
 
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route path="/admin" component={Admin} />
+      <Route path="/add" component={Add} />
       <Redirect from="/" to="/admin/dashboard" />
     </Switch>
   </Router>,
