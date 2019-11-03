@@ -14,6 +14,12 @@ router.get('/:id', (req, res) => {
     .catch(err => res.status(400).jsonp(err));
 });
 
+router.post('/', (req, res) => {
+  Medications.store(req.body)
+    .then(data => res.jsonp(data))
+    .catch(err => res.status(400).jsonp(err));
+});
+
 router.delete('/:id', (req, res) => {
   Medications.destroy(req.params.id)
     .then(data => res.jsonp(data))

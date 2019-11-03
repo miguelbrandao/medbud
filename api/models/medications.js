@@ -13,6 +13,10 @@ const MedicationSchema = new Schema({
     type: String
   },
   reminderDate: Date,
+  root: {
+    required: true,
+    type: Boolean
+  },
   text: {
     required: true,
     type: String

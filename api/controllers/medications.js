@@ -10,6 +10,10 @@ Medications.show = id => {
   return Medication.find({ n_id: id }).exec();
 };
 
+Medications.store = data => {
+  return Medication.create(data);
+};
+
 Medications.destroy = id => {
   return Medication.delete({ n_id: id }).exec();
 };

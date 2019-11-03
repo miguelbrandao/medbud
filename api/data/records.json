@@ -2,7 +2,25 @@
   {
     "user": 1,
     "medication": 1,
-    "answer": "Não",
+    "answer": "Sim",
     "date": "2019-11-02T09:20:00Z"
+  },
+  {
+    "user": 1,
+    "medication": 2,
+    "answer": "Não",
+    "date": "2019-11-02T09:20:10Z"
+  },
+  {
+    "user": 1,
+    "medication": 3,
+    "answer": "Não",
+    "date": "2019-11-02T09:20:20Z"
+  },
+  {
+    "user": 1,
+    "medication": 4,
+    "answer": "Não",
+    "date": "2019-11-02T09:20:30Z"
   }
 ]

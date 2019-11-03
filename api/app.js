@@ -20,11 +20,13 @@ const indexRouter = require('./routes/index');
 const medicationsRouter = require('./routes/medications');
 const usersRouter = require('./routes/users');
 const recordsRouter = require('./routes/records');
+const historyRouter = require('./routes/history');
 
 app.use('/', indexRouter);
 app.use('/medications', medicationsRouter);
 app.use('/users', usersRouter);
 app.use('/records', recordsRouter);
+app.use('/history', historyRouter);
 
 app.use((req, res, next) => {
   next(createError(404));
